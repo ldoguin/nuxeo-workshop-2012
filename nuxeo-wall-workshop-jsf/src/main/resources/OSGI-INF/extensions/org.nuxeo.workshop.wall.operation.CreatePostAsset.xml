@@ -1,0 +1,8 @@
+<component name="org.nuxeo.workshop.wall.operation.CreatePostAsset">
+
+  <extension target="org.nuxeo.ecm.core.operation.OperationServiceComponent"
+    point="operations" >
+      <operation class="org.nuxeo.workshop.wall.operation.CreatePostAsset" />
+   </extension>
+    
+</component>

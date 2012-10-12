@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-Vendor: Nuxeo
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Bundle-Version: 5.7-I20120918_1109
+Bundle-Name: nuxeo-wall-workshop-jsf
+Nuxeo-Component: OSGI-INF/extensions/org.nuxeo.workshop.wall.operation
+ .CreatePostAsset.xml
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: nuxeo-wall-workshop-jsf
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+
