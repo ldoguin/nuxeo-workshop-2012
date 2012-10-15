@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->  <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>Create your Nuxeo slides</title>
+	
+	<meta name="description" content="Nuxeo slides - Create your own set">
+	<meta name="author" content="Nuxeo">
+	<meta name="viewport" content="width=1024, user-scalable=no">
+	
+	<!-- Core and extension CSS files -->
+	<link rel="stylesheet" href="deck.js/core/deck.core.css">
+	<link rel="stylesheet" href="deck.js/extensions/goto/deck.goto.css">
+	<link rel="stylesheet" href="deck.js/extensions/menu/deck.menu.css">
+	<link rel="stylesheet" href="deck.js/extensions/navigation/deck.navigation.css">
+	<link rel="stylesheet" href="deck.js/extensions/status/deck.status.css">
+	<link rel="stylesheet" href="deck.js/extensions/hash/deck.hash.css">
+	<link rel="stylesheet" href="deck.js/extensions/scale/deck.scale.css">
+	
+	<!-- Nuxeo Slide Default theme -->
+	<link rel="stylesheet" href="themes/style/nuxeo-theme.css">
+	
+	<!-- Nuxeo Slide with comments theme -->
+	<link rel="stylesheet" href="themes/style/nuxeo-theme-with-comments.css">
+	
+	<!-- Nuxeo World 2012 theme -->
+	<link rel="stylesheet" href="themes/style/nuxeo-theme-world-2012.css">
+	
+	<!-- Transition theme. More available in /themes/transition/ or create your own. -->
+	<link rel="stylesheet" href="themes/transition/nuxeo-transition.css">
+	
+	<script src="deck.js/modernizr.custom.js"></script>
+</head>
+
+<body class="deck-container">
+
+<!-- Nuxeo Logo -->
+<div class="nuxeo-logo">
+  <span class="nuxeo">nuxeo</span>
+</div>
+
+<!-- Nuxeo World Logo -->
+<div class="nuxeo-world-logo">
+</div>
+
+
+<!-- Begin slides -->
+<section class="slide cover" id="nuxeo-slides">
+    <div id="arty1"></div>
+    <div id="arty2"></div>
+    <img src="themes/images/title.png" alt="title" width="450" height="391" class="cover-logo"/>
+	<h1>Nuxeo World talk</h1>
+	<h2>Subtitle giving precisions</h2>
+	<h6>Author 1 &amp; date of the presentation</h6>
+</section>
+
+
+<section class="slide" id="maingoals">
+<h3>Main goals for this workshop</h3>
+
+<ul><li> <h4>Take a look at Nuxeo Studio Advanced features</h4></li>
+<li> <h4>See how Studio and Nuxeo IDE can work together.</h4></li>
+<li> <h4>Get a document typology ready for this afternoon Workshop</h4></li></ul>
+
+
+</section>
+<section class="slide" id="userstory">
+<h3>We need a user story</h3>
+
+  <div class="split-box split-37">
+<ul><li>
+<h5>User should be able to post</h5></li>
+
+<li><h5>text, link, video, photos...</h5></li>
+
+<li><h5>and see the result on The Wall</h5></li>
+</ul>
+</div>
+  <div class="split-box split-63">
+<img src="./TheWall.jpg" alt="The Wall">
+</div>
+
+</section>
+<section class="slide" id="endresult">
+<h3>Ok, not that wall, more like this one</h3>
+<img src="./DocTypeRegistries.png" alt="Wall Example">
+</section>
+<section class="slide" id="setup">
+<h3>Quick Setup</h3>
+<ul>
+<li><h5>You will need Nuxeo IDE and the SDK</h5></li>
+<li><h5>Start the server</h5></li>
+<li><h5>Register your connect instance</h5></li>
+<li><h5>Set the DEV mode</h5></li>
+<li><h5>Project sources are available on GitHub: <a href="https://github.com/ldoguin/nuxeo-workshop-2012">https://github.com/ldoguin/nuxeo-workshop-2012</a></h5></li>
+<li><h5>All set!</h5></li>
+</ul>
+</section>
+
+<section class="slide" id="thePostDocType">
+<h2>The Post document type</h2>
+</section>
+
+<section class="slide" id="post1">
+<h3>The Post document type 1/2</h3>
+
+<ul>
+<li><h5>Folderish, can contain Image, Sound, or Video doc type</h5></li>
+<li><h5>Just extends the Folder doc type</h5></li>
+<li><h5>But what about attachments?</h5></li>
+<li><h5>Be Lazy! Use as much as Nuxeo Platform provides</h5></li>
+<li><h5>Like conversion for Videos and Pictures for instance</h5></li>
+<li><h5>Let&#39;s make it simple, Post can be created anywhere by anyone</h5></li>
+<li><h5>And we'll use default Nuxeo security</h5></li>
+</ul>
+</section>
+<section class="slide" id="post2">
+<h3>The Post document type 2/2</h3>
+
+
+<ul><li><h5>What about metadatas? You&#39;ll need:</h5></li>
+
+<ul>
+<li>the post content</li>
+<li>the author</li>
+<li>the creation date</li>
+</ul>
+
+<li><h5>That&#39;s the Dublincore schema</h5></li>
+</ul>
+
+</section>
+<section class="slide" id="postStudio">
+<h3>Post Doc type in Studio</h3>
+
+<img src="PostDocType.png" alt="Post Document type" />
+
+</section>
+<section class="slide" id="problem">
+<h3>Problem?</h3>
+<br /><br /><br /><br /><br />
+<div>
+<h4>Right now you should be looking for Video, Audio and Picture doc types</h4>
+</div>
+</section>
+<section class="slide" id="wat">
+<h3>Guess What? They&#39;re not here!</h3>
+<br /><br /><br /><br /><br />
+<div>
+<span class="bold"><h4>WAT!?</h4></span>
+</div>
+</section>
+<section class="slide" id="registries">
+<h3>Introducing Nuxeo Studio registries</h3>
+
+<img src="DocTypeRegistries.png" alt="Document Type Registries" />
+
+</section>
+<section class="slide" id="testPostDocType">
+<h2>Time to test your Post doc type</h2>
+
+</section>
+<section class="slide" id="wallTab">
+<h2>The Wall Tab</h2>
+
+</section>
+<section class="slide" id="wall">
+<h3>The Wall</h3>
+<ul>
+<li><h5>A wall is a list of Post documents</h5></li>
+
+<li><h5>A list of documents is represented by what we call a Content View</h5></li>
+
+<li><h5>Simply put, it&#39;s a query and a result table layout</h5></li>
+</ul>
+</section>
+<section class="slide" id="layout">
+<h3>A Layout?</h3>
+
+<img src="walltablelayout.png" alt="Wall table layout"/>
+
+</section>
+<section class="slide" id="queryContentView">
+<h3>A Content View?</h3>
+
+<h4>The query tab</h4>
+
+<img src="wallcontentview.png" alt="Wall ContentView" />
+
+</section>
+<section class="slide" id="resultContentView">
+<h3>A Content View?</h3>
+
+<h4>The result tab</h4>
+
+<img src="wallContentViewResult.png" alt="Wall ContentView result layout" />
+
+</section>
+<section class="slide" id="tabDesigner">
+<h3>The tab designer</h3>
+
+<img src="TabDesigner.png" alt="The tab designer" />
+</section>
+<section class="slide" id="testWallTab">
+<h2>Time to test your Wall tab</h2>
+</section>
+<section class="slide" id="displayPostAsset">
+<h2>We still need to display the post asset</h2>
+
+</section>
+<section class="slide" id="customwidget">
+<div class="sticker">Gain some time, download the widget template right <a href="https://github.com/ldoguin/nuxeo-workshop-2012">here</a>!</div>
+<h3>Let&#39;s write a custom widget</h3>
+
+<ul>
+<li><h5>This widget will diplay the content from the Post first child document</h5></li>
+
+<li><h5>We have to display Video, Audio player and Pictures</h5></li>
+</ul>
+</section>
+<section class="slide" id="postContent">
+<h3>Display the post content</h3>
+<p><pre><code>
+&lt;f:subview id=&quot;#{widget.id}&quot;
+  xmlns:f=&quot;http://java.sun.com/jsf/core&quot;
+  xmlns:h=&quot;http://java.sun.com/jsf/html&quot;
+  xmlns:c=&quot;http://java.sun.com/jstl/core&quot;
+  xmlns:nxu=&quot;http://nuxeo.org/nxweb/util&quot;&gt;
+&lt;nxu:set var=&quot;children&quot; value=&quot;#{documentManager.getChildren(field.getRef())}&quot; cache=&quot;true&quot; &gt;
+&lt;c:if test=&quot;#{not empty children }&quot;&gt;
+&lt;nxu:set var=&quot;child&quot; value=&quot;#{children.get(0)}&quot; &gt;
+&lt;!-- Code to handle video or audio player or display a picture. --&gt;
+&lt;/nxu:set&gt;
+&lt;/c:if&gt;
+&lt;/nxu:set&gt;
+  
+&lt;/f:subview&gt;
+</code></pre></p>
+
+</section>
+<section class="slide" id="audio">
+<h3>Display the audio player</h3>
+
+<p><pre><code>
+&lt;c:if test=&quot;#{child.type eq 'Audio' }&quot;&gt;
+&lt;nxu:set var=&quot;audioFile&quot; value=&quot;#{child.file.content}&quot; &gt;
+  &lt;c:if test=&quot;#{not empty audioFile and not empty audioFile.mimeType and audioFile.mimeType.startsWith('audio/')}&quot;&gt;
+    &lt;c:set var=&quot;width&quot;
+        value=&quot;#{nxu:test(!empty widget.properties.width, widget.properties.width, '100%')}&quot; /&gt;
+
+    &lt;nxu:set var=&quot;sound_url&quot;
+      value=&quot;#{nxd:bigFileUrl(child, 'file:content', audioFile.filename)}&quot;&gt;
+
+      &lt;audio id=&quot;audioplayer_#{widget.id}&quot; preload=&quot;auto&quot; controls=&quot;controls&quot; style=&quot;width:#{width};&quot;&gt;
+        &lt;source src=&quot;#{sound_url}&quot; /&gt;
+      &lt;/audio&gt;
+      &lt;c:if test=&quot;#{audioFile.mimeType == 'audio/mpeg'}&quot;&gt;
+        &lt;script type=&quot;text/javascript&quot;&gt;
+          var audioTag = document.createElement('audio');
+          if (!(!!(audioTag.canPlayType) &amp;amp;&amp;amp; (&quot;no&quot; != audioTag.canPlayType(&quot;audio/mpeg&quot;)) &amp;amp;&amp;amp; (&quot;&quot; != audioTag.canPlayType(&quot;audio/mpeg&quot;)))) {
+              AudioPlayer.setup(&quot;#{baseURL}scripts/wpaudioplayer/player.swf&quot;, {width: &quot;#{width}&quot;, initialvolume: 100});
+              AudioPlayer.embed(&quot;audioplayer_#{widget.id}&quot;, {soundFile: &quot;#{sound_url}&quot;});
+          }
+        &lt;/script&gt;
+      &lt;/c:if&gt;
+
+    &lt;/nxu:set&gt;
+  &lt;/c:if&gt;
+    &lt;/nxu:set&gt;
+
+&lt;/c:if&gt;
+
+
+</code></pre></p>
+
+</section>
+<section class="slide" id="video">
+<h3>Display the Video player</h3>
+
+<p><pre><code>
+&lt;c:if test=&quot;#{child.type eq 'Video' }&quot;&gt;
+
+  &lt;c:set var=&quot;width&quot; value=&quot;#{nxu:test(!empty widgetProperty_width, widgetProperty_width, 550)}&quot; /&gt;
+  &lt;c:set var=&quot;height&quot; value=&quot;#{nxu:test(!empty widgetProperty_height, widgetProperty_height, 310)}&quot; /&gt;
+
+  &lt;nxu:set var=&quot;staticPreview&quot; value=&quot;#{videoActions.getURLForStaticPreview(child)}&quot;&gt;
+  &lt;nxu:set var=&quot;mp4URL&quot; value=&quot;#{videoActions.getTranscodedVideoURL(child, 'MP4 480p')}&quot;&gt;
+  &lt;nxu:set var=&quot;webmURL&quot; value=&quot;#{videoActions.getTranscodedVideoURL(child, 'WebM 480p')}&quot;&gt;
+
+  &lt;nxu:set var=&quot;safariHTML5&quot; value=&quot;#{videoActions.safariHTML5}&quot;&gt;
+  &lt;nxu:set var=&quot;chromeHTML5&quot; value=&quot;#{videoActions.chromeHTML5}&quot;&gt;
+  &lt;nxu:set var=&quot;firefoxHTML5&quot; value=&quot;#{videoActions.firefoxHTML5}&quot;&gt;
+  &lt;nxu:set var=&quot;HTML5Available&quot; value=&quot;#{safariHTML5 or chromeHTML5 or firefoxHTML5}&quot;&gt;
+
+    &lt;c:if test=&quot;#{empty mp4URL}&quot;&gt;
+      &lt;nxu:set var=&quot;conversionStatus&quot;
+        value=&quot;#{videoActions.getVideoConversionStatus(child, 'MP4 480p')}&quot;&gt;
+        &lt;c:if test=&quot;#{not empty conversionStatus}&quot;&gt;
+          &lt;p class=&quot;tips&quot;&gt;
+            #{videoActions.getStatusMessageFor(conversionStatus)}
+          &lt;/p&gt;
+        &lt;/c:if&gt;
+      &lt;/nxu:set&gt;
+    &lt;/c:if&gt;
+    &lt;c:choose&gt;
+      &lt;c:when test=&quot;#{(not empty mp4URL and safariHTML5) or (not empty webmURL and (chromeHTML5 or firefoxHTML5))}&quot;&gt;
+        &lt;div class=&quot;video-js-box&quot;&gt;
+          &lt;!-- HTML5 player --&gt;
+          &lt;video class=&quot;video-js&quot; width=&quot;#{width}&quot; height=&quot;#{height}&quot; controls=&quot;controls&quot; preload=&quot;auto&quot; poster=&quot;#{staticPreview}&quot;&gt;
+            &lt;c:if test=&quot;#{not empty mp4URL and safariHTML5}&quot;&gt;
+              &lt;source src=&quot;#{mp4URL}&quot; type='video/mp4' /&gt;
+            &lt;/c:if&gt;
+            &lt;c:if test=&quot;#{not empty webmURL and (firefoxHTML5 or chromeHTML5)}&quot;&gt;
+              &lt;source src=&quot;#{webmURL}&quot; type='video/webm' /&gt;
+            &lt;/c:if&gt;
+            &lt;c:if test=&quot;#{not empty mp4URL}&quot;&gt;
+              &lt;object classid=&quot;clsid:D27CDB6E-AE6D-11cf-96B8-444553540000&quot; codebase=&quot;http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,45,2&quot;
+                  width=&quot;#{width}&quot; height=&quot;#{height}&quot; class=&quot;vjs-flash-fallback&quot;&gt;
+                &lt;param name=&quot;movie&quot; value=&quot;#{baseURL}swf/JarisFLVPlayer.swf&quot; /&gt;
+                &lt;param name=&quot;menu&quot; value=&quot;false&quot;/&gt;
+                &lt;param name=&quot;scale&quot; value=&quot;noscale&quot; /&gt;
+                &lt;param name=&quot;allowFullscreen&quot; value=&quot;true&quot;/&gt;
+                &lt;param name=&quot;allowScriptAccess&quot; value=&quot;always&quot;/&gt;
+                &lt;param name=&quot;bgcolor&quot; value=&quot;#000000&quot;/&gt;
+                &lt;param name=&quot;quality&quot; value=&quot;high&quot;/&gt;
+                &lt;param name=&quot;wmode&quot; value=&quot;opaque&quot;/&gt;
+                &lt;param name=&quot;flashvars&quot; value=&quot;source=#{mp4URL}&amp;amp;type=video&amp;amp;streamtype=file&amp;amp;controltype=0&amp;amp;duration=&amp;amp;poster=#{videoActions.getURLForStaticPreview(child)}&amp;amp;aspectratio=&amp;amp;autostart=false&amp;amp;;hardwarescaling=false&amp;amp;controls=true&amp;amp;darkcolor=000000&amp;amp;brightcolor=4c4c4c&amp;amp;controlcolor=FFFFFF&amp;amp;hovercolor=67A8C1&amp;amp;seekcolor=D3D3D3&amp;amp;jsapi=flase&amp;amp;controltype=1&quot; /&gt;
+                &lt;embed type=&quot;application/x-shockwave-flash&quot; class=&quot;vjs-flash-fallback&quot;
+                  pluginspage=&quot;http://www.adobe.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash&quot;
+                  width=&quot;#{width}&quot; height=&quot;#{height}&quot;
+                  src=&quot;#{baseURL}swf/JarisFLVPlayer.swf&quot;
+                  menu=&quot;false&quot;
+                  scale=&quot;noscale&quot;
+                  allowfullscreen=&quot;true&quot;
+                  allowscriptaccess=&quot;always&quot;
+                  bgcolor=&quot;#000000&quot;
+                  quality=&quot;high&quot;
+                  wmode=&quot;opaque&quot;
+                  flashvars=&quot;source=#{mp4URL}&amp;amp;type=video&amp;amp;streamtype=file&amp;amp;controltype=0&amp;amp;duration=&amp;amp;poster=#{videoActions.getURLForStaticPreview(child)}&amp;amp;aspectratio=&amp;amp;autostart=false&amp;amp;;hardwarescaling=false&amp;amp;controls=true&amp;amp;darkcolor=000000&amp;amp;brightcolor=4c4c4c&amp;amp;controlcolor=FFFFFF&amp;amp;hovercolor=67A8C1&amp;amp;seekcolor=D3D3D3&amp;amp;jsapi=flase&amp;amp;controltype=1&quot;
+                  seamlesstabbing=&quot;false&quot;&gt;
+                  &lt;img src=&quot;#{staticPreview}&quot; height=&quot;480&quot; alt=&quot;Poster Image&quot;
+                    title=&quot;No video playback capabilities.&quot; /&gt;
+                &lt;/embed&gt;
+              &lt;/object&gt;
+            &lt;/c:if&gt;
+          &lt;/video&gt;
+        &lt;/div&gt;
+      &lt;/c:when&gt;
+      &lt;c:otherwise&gt;
+        &lt;c:if test=&quot;#{not empty mp4URL}&quot;&gt;
+        &lt;object classid=&quot;clsid:D27CDB6E-AE6D-11cf-96B8-444553540000&quot; codebase=&quot;http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=10,0,45,2&quot;
+            width=&quot;#{width}&quot; height=&quot;#{height}&quot; class=&quot;vjs-flash-fallback&quot;&gt;
+          &lt;param name=&quot;movie&quot; value=&quot;#{baseURL}swf/JarisFLVPlayer.swf&quot; /&gt;
+          &lt;param name=&quot;menu&quot; value=&quot;false&quot;/&gt;
+          &lt;param name=&quot;scale&quot; value=&quot;noscale&quot; /&gt;
+          &lt;param name=&quot;allowFullscreen&quot; value=&quot;true&quot;/&gt;
+          &lt;param name=&quot;allowScriptAccess&quot; value=&quot;always&quot;/&gt;
+          &lt;param name=&quot;bgcolor&quot; value=&quot;#000000&quot;/&gt;
+          &lt;param name=&quot;quality&quot; value=&quot;high&quot;/&gt;
+          &lt;param name=&quot;wmode&quot; value=&quot;opaque&quot;/&gt;
+          &lt;param name=&quot;flashvars&quot; value=&quot;source=#{mp4URL}&amp;amp;type=video&amp;amp;streamtype=file&amp;amp;controltype=0&amp;amp;duration=&amp;amp;poster=#{videoActions.getURLForStaticPreview(child)}&amp;amp;aspectratio=&amp;amp;autostart=false&amp;amp;;hardwarescaling=false&amp;amp;controls=true&amp;amp;darkcolor=000000&amp;amp;brightcolor=4c4c4c&amp;amp;controlcolor=FFFFFF&amp;amp;hovercolor=67A8C1&amp;amp;seekcolor=D3D3D3&amp;amp;jsapi=flase&amp;amp;controltype=1&quot; /&gt;
+          &lt;embed type=&quot;application/x-shockwave-flash&quot;
+            pluginspage=&quot;http://www.adobe.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash&quot;
+            width=&quot;#{width}&quot; height=&quot;#{height}&quot;
+            src=&quot;#{baseURL}swf/JarisFLVPlayer.swf&quot;
+            menu=&quot;false&quot;
+            scale=&quot;noscale&quot;
+            allowfullscreen=&quot;true&quot;
+            allowscriptaccess=&quot;always&quot;
+            bgcolor=&quot;#000000&quot;
+            quality=&quot;high&quot;
+            wmode=&quot;opaque&quot;
+            flashvars=&quot;source=#{mp4URL}&amp;amp;type=video&amp;amp;streamtype=file&amp;amp;controltype=0&amp;amp;duration=&amp;amp;poster=#{videoActions.getURLForStaticPreview(child)}&amp;amp;aspectratio=&amp;amp;autostart=false&amp;amp;;hardwarescaling=false&amp;amp;controls=true&amp;amp;darkcolor=000000&amp;amp;brightcolor=4c4c4c&amp;amp;controlcolor=FFFFFF&amp;amp;hovercolor=67A8C1&amp;amp;seekcolor=D3D3D3&amp;amp;jsapi=flase&amp;amp;controltype=1&quot;
+            seamlesstabbing=&quot;false&quot;&gt;
+          &lt;/embed&gt;
+        &lt;/object&gt;
+        &lt;/c:if&gt;
+      &lt;/c:otherwise&gt;
+    &lt;/c:choose&gt;
+
+  &lt;/nxu:set&gt;
+  &lt;/nxu:set&gt;
+  &lt;/nxu:set&gt;
+  &lt;/nxu:set&gt;
+  &lt;/nxu:set&gt;
+  &lt;/nxu:set&gt;
+  &lt;/nxu:set&gt;
+
+  &lt;script type=&quot;text/javascript&quot;&gt;
+    jQuery(document).ready(function() {
+      NXVideo.loadVideoPlayer();
+    });
+  &lt;/script&gt;
+
+
+&lt;/c:if&gt;
+
+</code></pre></p>
+
+</section>
+<section class="slide" id="picture">
+<h3>Display the Picture</h3>
+
+<p><pre><code>
+&lt;c:if test=&quot;#{child.type eq 'Picture' }&quot;&gt;
+  &lt;c:set var=&quot;pictureView&quot; value=&quot;#{nxu:test(!empty widgetProperty_pictureView, widgetProperty_pictureView, 'Thumbnail')}&quot; /&gt;
+  &lt;c:set var=&quot;blobPropertyName&quot; value=&quot;#{pictureView}:content&quot; /&gt;
+
+  &lt;c:if test=&quot;#{child.hasFacet('Picture')}&quot;&gt;
+    &lt;nxu:set var=&quot;image_url&quot;
+     value=&quot;#{nxd:fileUrl('downloadPicture', child, blobPropertyName, child.dublincore.modified)}&quot;
+     cache=&quot;true&quot;&gt;
+      &lt;c:if test=&quot;#{not empty image_url}&quot;&gt;
+        &lt;nxu:graphicImage styleClass=&quot;fullMaxWidth&quot; value=&quot;#{image_url}&quot;
+          title=&quot;#{child.title}&quot; alt=&quot;#{child.title}&quot;
+          width=&quot;#{widgetProperty_width}&quot; height=&quot;#{widgetProperty_height}&quot; /&gt;
+      &lt;/c:if&gt;
+    &lt;/nxu:set&gt;
+  &lt;/c:if&gt;
+
+&lt;/c:if&gt;
+</code></pre></p>
+
+</section>
+<section class="slide" id="widgetupload">
+<h3>How to use the Widget in Studio</h3>
+
+<img src="postWidgetTemplate.png" alt="Post widget template" />
+
+</section>
+<section class="slide" id="testWall">
+<h2>Take a Look at your shiny wall</h2>
+
+</section>
+<section class="slide" id="simplifyPostCreation">
+<h2>Simplify Post Creation</h2>
+
+</section>
+<section class="slide" id="simplifyPost">
+<h3>I hate having to create two doc for one post</h3>
+<ul>
+<li><h5>We need a form with title, description</h5></li>
+<li><h5>And File Input</h5></li>
+<li><h5>Change the Creation Layout</h5></li>
+</ul>
+</section>
+<section class="slide" id="postCreationLayoutPic">
+<h3>Post Creation Layout</h3>
+<img src="PostCreationLayout.png" alt="Post Creation layout" />
+</section>
+<section class="slide" id="autoAssetCreation">
+<h3>But how should we create the child doc?</h3>
+<ul>
+<li><h5>Automatic Asset creation</h5></li>
+<li><h5>Event Handler and Content Automation</h5></li>
+<li><h5>Run an operation chain each time a post is created</h5></li>
+</ul>
+</section>
+
+<section class="slide" id="eventListenerConf">
+<h3>Event Handler configuration</h3>
+<img src="PostCreatedEvent.png" alt="Post created event listener" />
+</section>
+
+<section class="slide" id="createAssetOperation">
+<h3>CreatePostAsset operation chain</h3>
+
+<h4>Required steps are:</h4>
+<ul>
+<li>Fetch context document (the post)</li>
+<li>Push it to the doc context stack</li>
+<li>Get the doc file (the asset)</li>
+<li>assign it to a context variable</li>
+<li>Pop our stacked document</li>
+<li>Create our Asset document</li>
+</ul>
+</section>
+
+<section class="slide" id="createAssetChain">
+<h3>What your chain should look like</h3>
+
+<img src="PostCreateOperatioChain.png" alt="Post Created operation chain" />
+
+</section>
+<section class="slide" id="customOperation">
+<h3>Custom Operation</h3>
+<ul>
+<li><h5>But the CreateDoc is a little too simple.</h5></li>
+
+<li><h5>Let&#39;s create a new one that will handle our custom types</h5></li>
+</ul>
+</section>
+<section class="slide" id="newProject">
+<h3>Create a new Project</h3>
+
+<img src="ProjectWizard.png" alt="New Project wizard" />
+
+</section>
+<section class="slide" id="newOperation">
+<h3>Create a new Operation</h3>
+
+<img src="PostCreationOperationWizard.png" alt="Post Creation operation wizard" />
+
+</section>
+<section class="slide" id="operationode">
+<h3>Code the operation</h3>
+<pre><code>
+package org.nuxeo.workshop.wall.operation;
+
+import java.io.IOException;
+import java.io.Serializable;
+import java.util.List;
+import java.util.Map;
+
+import org.nuxeo.ecm.automation.OperationContext;
+import org.nuxeo.ecm.automation.core.Constants;
+import org.nuxeo.ecm.automation.core.annotations.Context;
+import org.nuxeo.ecm.automation.core.annotations.Operation;
+import org.nuxeo.ecm.automation.core.annotations.OperationMethod;
+import org.nuxeo.ecm.automation.core.collectors.DocumentModelCollector;
+import org.nuxeo.ecm.core.api.Blob;
+import org.nuxeo.ecm.core.api.ClientException;
+import org.nuxeo.ecm.core.api.CoreSession;
+import org.nuxeo.ecm.core.api.DocumentModel;
+import org.nuxeo.ecm.core.api.model.PropertyException;
+import org.nuxeo.ecm.platform.audio.extension.AudioImporter;
+import org.nuxeo.ecm.platform.filemanager.service.extension.DefaultFileImporter;
+import org.nuxeo.ecm.platform.picture.api.ImagingDocumentConstants;
+import org.nuxeo.ecm.platform.video.VideoConstants;
+
+/**
+ * @author ldoguin
+ */
+@Operation(id = CreatePostAsset.ID, category = Constants.CAT_DOCUMENT, label = "CreatePostAsset", description = "")
+public class CreatePostAsset {
+
+	public static final String ID = "CreatePostAsset";
+
+	@Context
+	protected OperationContext operationContext;
+
+	@Context
+	protected CoreSession coreSession;
+
+	@OperationMethod(collector = DocumentModelCollector.class)
+	public DocumentModel run(DocumentModel input) throws ClientException,
+			IOException {
+		Blob asset = (Blob) operationContext.get("uploadedAsset");
+		if (asset == null || asset.getLength() == 0l) {
+			return null;
+		}
+		String blobMimeType = asset.getMimeType();
+		if (blobMimeType.startsWith("video")) {
+			return createAsset(input, VideoConstants.VIDEO_TYPE, asset);
+		} else if (blobMimeType.startsWith("audio")) {
+			return createAsset(input, AudioImporter.AUDIO_TYPE, asset);
+		} else if (blobMimeType.startsWith("image")) {
+			return createAsset(input,
+			 	ImagingDocumentConstants.PICTURE_TYPE_NAME, asset);
+		} else {
+			return createAsset(input, DefaultFileImporter.TYPE_NAME, asset);
+		}
+	}
+
+	protected DocumentModel createAsset(DocumentModel parent, String type,
+			Blob asset) throws ClientException {
+		DocumentModel postAsset = coreSession.createDocumentModel(
+				parent.getPathAsString(), asset.getFilename(), type);
+		postAsset.setPropertyValue("dc:title",
+				(Serializable) asset.getFilename());
+		postAsset.setPropertyValue("file:content", (Serializable) asset);
+		postAsset = coreSession.createDocument(postAsset);
+		return postAsset;
+	}
+
+}
+</code></pre>
+</section>
+<section class="slide" id="deployOperation">
+<h3>Deploy your new project on the server</h3>
+<img src="DeployNewProject.png" alt="Deploy your Project"/>
+</section>
+
+<section class="slide" id="exportToStudio">
+<h3>Use the export button to add this to studio registries</h3>
+<img src="StudioExport.png" alt="Studio Export" />
+</section>
+<section class="slide" id="testPostCreation">
+<h2>Time to test your &#39;one click&#39; Post creation</h2>
+</section>
+<section class="slide" id="linksInPost">
+<h2>What about links in posts?</h2>
+
+</section>
+<section class="slide" id="links">
+<h3>What about links?</h3>
+<ul>
+<li><h5>We can check if the fileInput is empty</h5></li>
+<li><h5>And if it is, look for a link in the post</h5></li>
+<li><h5>Ever heard of oEmbed?</h5></li>
+<li><h5>We have a module for that</h5></li>
+</ul>
+
+</section>
+<section class="slide" id="externalLibraries">
+<h3>Import oEmbed and nuxeo-external-link</h3>
+
+</section>
+
+<section class="slide" id="externalLibraries">
+<h3>Add external modules and libraries</h3>
+<img src="AddUserLibraries.png" alt="Add User Libraries"/>
+</section>
+<section class="slide" id="deployLibraries">
+<h3>Deploy libraries to your server</h3>
+<img src="ExternalLIbrariesDeployment.png" alt="Add External Libraries to Deployment"/>
+</section>
+<section class="slide" id="oEmbed">
+<h3>Modify the operation to use oEmbed</h3>
+<pre><code>
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import org.nuxeo.externalresource.ExternalResourceConstants;
+import org.nuxeo.externalresource.provider.ExternalResourceProvider;
+import org.nuxeo.externalresource.provider.ExternalResourceProviderService;
+
+	protected Pattern URL_PATTERN = Pattern
+			.compile("(.*)((https?|ftp|file)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|])(.*)",
+					Pattern.CASE_INSENSITIVE | Pattern.DOTALL);
+
+	@Context
+	protected ExternalResourceProviderService externalResourceService;
+
+	protected List<ExternalResourceProvider> providerInstanceList;
+
+	@OperationMethod(collector = DocumentModelCollector.class)
+	public DocumentModel run(DocumentModel input) throws ClientException,
+			IOException {
+		Blob asset = (Blob) operationContext.get("uploadedAsset");
+		if (asset == null || asset.getLength() == 0l) {
+			return searchForLink(input);
+		}
+		String blobMimeType = asset.getMimeType();
+		if (blobMimeType.startsWith("video")) {
+			return createAsset(input, VideoConstants.VIDEO_TYPE, asset);
+		} else if (blobMimeType.startsWith("audio")) {
+			return createAsset(input, AudioImporter.AUDIO_TYPE, asset);
+		} else if (blobMimeType.startsWith("image")) {
+			return createAsset(input,
+			 	ImagingDocumentConstants.PICTURE_TYPE_NAME, asset);
+		} else {
+			return createAsset(input, DefaultFileImporter.TYPE_NAME, asset);
+		}
+	}
+
+	protected DocumentModel searchForLink(DocumentModel input)
+			throws PropertyException, ClientException {
+		String text = input.getProperty("dc:description")
+				.getValue(String.class);
+		Matcher m = URL_PATTERN.matcher(text);
+		if (!m.matches()) {
+			return null;
+		} else {
+			String link = m.group(2);
+			for (ExternalResourceProvider provider : getProviderOptions()) {
+				if (provider.match(link)) {
+					Map<String, Serializable> properties = provider
+							.getProperties(link);
+					if (properties != null) {
+						String html = (String) properties
+								.get(ExternalResourceConstants.EXTERNAL_RESOURCE_HTML_KEY);
+						String title = (String) properties
+								.get(ExternalResourceConstants.EXTERNAL_RESOURCE_TITLE_KEY);
+						DocumentModel asset = coreSession.createDocumentModel(
+								input.getPathAsString(), title,
+								"ExternalResource");
+						asset.setPropertyValue("dc:title", title);
+						asset.setPropertyValue(
+								ExternalResourceConstants.EXTERNAL_RESOURCE_HTML_PROPERTY_NAME,
+								html);
+						asset.setPropertyValue(
+								ExternalResourceConstants.EXTERNAL_RESOURCE_LINK_PROPERTY_NAME,
+								text);
+						asset.setPropertyValue(
+								ExternalResourceConstants.EXTERNAL_RESOURCE_PROVIDER_ICON_PROPERTY_NAME,
+								provider.getIcon());
+						asset.setPropertyValue(
+								ExternalResourceConstants.EXTERNAL_RESOURCE_PROVIDER_PROPERTY_NAME,
+								provider.getName());
+						asset = coreSession.createDocument(asset);
+						return asset;
+					}
+				}
+			}
+		}
+		return null;
+	}
+
+	protected boolean match(String url) {
+		Matcher m = URL_PATTERN.matcher(url);
+		if (m.matches()) {
+
+			return true;
+		}
+		return false;
+	}
+
+	protected List<ExternalResourceProvider> getProviderOptions() {
+		if (providerInstanceList == null) {
+			providerInstanceList = externalResourceService.getProviders();
+		}
+		return providerInstanceList;
+	}
+
+
+
+</code></pre>
+</section>
+
+<section class="slide" id="testoEmbed">
+<h2>Time to post links!</h2>
+</section>
+
+
+<section class="slide" id="nextWorkshop">
+<h3>Next Workshop</h3>
+</section>
+
+
+
+<section class="slide" id="thank-you">
+	<h2>Thank you!</h2>
+	<h6>Author 1 &amp; Author 2 &copy; 2012 - Nuxeo</h6>
+</section>
+
+<!-- deck.navigation snippet -->
+<a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+<a href="#" class="deck-next-link" title="Next">&#8594;</a>
+
+<!-- deck.status snippet -->
+<p class="deck-status">
+	<span class="deck-status-current"></span>
+	/
+	<span class="deck-status-total"></span>
+</p>
+
+<!-- deck.goto snippet -->
+<form action="." method="get" class="goto-form">
+	<label for="goto-slide">Go to slide:</label>
+	<input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+	<datalist id="goto-datalist"></datalist>
+	<input type="submit" value="Go">
+</form>
+
+<!-- deck.hash snippet -->
+<a href="." title="Permalink to this slide" class="deck-permalink">#</a>
+
+
+<!-- Grab CDN jQuery, with a protocol relative URL; fall back to local if offline -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="deck.js/jquery-1.7.2.min.js"><\/script>')</script>
+
+<!-- Deck Core and extensions -->
+<script src="deck.js/core/deck.core.js"></script>
+<script src="deck.js/extensions/hash/deck.hash.js"></script>
+<script src="deck.js/extensions/menu/deck.menu.js"></script>
+<script src="deck.js/extensions/goto/deck.goto.js"></script>
+<script src="deck.js/extensions/status/deck.status.js"></script>
+<script src="deck.js/extensions/navigation/deck.navigation.js"></script>
+<script src="deck.js/extensions/scale/deck.scale.js"></script>
+
+<!-- Initialize the deck -->
+<script>
+$(function() {
+	$.deck('.slide');
+});
+</script>
+
+</body>
+</html>
